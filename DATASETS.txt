@@ -1,0 +1,38 @@
+For our project, we would like to explore whether storms and other weather phenomena correlate with an increase or decrease in
+flight delays in the United States. For our main dataset, we decided to choose Storm Events by the National Oceanic and 
+Atmospheric Administration (NOAA) found at https://public.enigma.com/browse/collection/national-climatic-weather-center-storm-events/3d0d8bdf-b885-48b9-a3b1-8a8441fc0131. 
+The files are separated by years starting from 1996 to 2000 with the same 61 attributes, the size ranges from approximately 
+30,000 records to up to 80,000 records. This dataset provides information about storms and other weather phenomena including 
+floods, tornados and record temperatures. The dataset also provides information about life losses, injuries, significant property
+damage, and disruption to commerce. For the beginning of our project we will be looking at how different weather patterns occur 
+across the country, for instance, are storms more prominent on the east coast or the west coast? what about tornadoes? What are 
+the most affected states by these weather phenomena?
+
+Here is a small sample from the Storm Events dataset:
+
+begin_yearmonth	begin_day	begin_time	end_yearmonth	end_day	end_time	episode_id	event_id	state	state_fips	year	month_name	event_type	cz_type	cz_fips	cz_name	wfo	begin_date_time	cz_timezone	end_date_time	injuries_direct	injuries_indirect	deaths_direct	deaths_indirect	damage_property	damage_crops	source	magnitude	magnitude_type	flood_cause	category	tor_f_scale	tor_length	tor_width	tor_other_wfo	tor_other_cz_state	tor_other_cz_fips	tor_other_cz_name	begin_range	begin_azimuth	begin_location	end_range	end_azimuth	end_location	begin_lat	begin_lon	end_lat	end_lon
+201301	13	400	201301	13	1815	71725	431881	MARYLAND	24	2013	January	Dense Fog	Z	11	SOUTHERN BALTIMORE	LWX	2013-01-13T04:00:00	EST-5	2013-01-13T18:15:00	0	0	0	0	0	0	ASOS																					
+201301	11	1000	201301	11	1600	71631	431092	COLORADO	8	2013	January	High Wind	Z	97	BENT COUNTY	PUB	2013-01-11T10:00:00	MST-7	2013-01-11T16:00:00	0	0	0	0	0	0	Trained Spotter	52	EG																			
+201301	12	2345	201301	13	15	70343	428207	KENTUCKY	21	2013	January	Heavy Rain	C	101	HENDERSON	PAH	2013-01-12T23:45:00	CST-6	2013-01-13T00:15:00	0	0	0	0	0	0	Broadcast Media												0	N	HENDERSON				37.83	-87.58		
+201301	11	1000	201301	11	1600	71631	431090	COLORADO	8	2013	January	High Wind	Z	95	WESTERN KIOWA COUNTY	PUB	2013-01-11T10:00:00	MST-7	2013-01-11T16:00:00	0	0	0	0	0	0	Trained Spotter	52	EG																			
+201301	12	2350	201301	13	300	70345	429338	ILLINOIS	17	2013	January	Flash Flood	C	145	PERRY	PAH	2013-01-12T23:50:00	CST-6	2013-01-13T03:00:00	0	0	0	0	10000	0	Trained Spotter			Heavy Rain									0	N	CUTLER	1	ESE	CUTLER	38.03	-89.57	38.03	-89.56
+
+
+
+For our second dataset we chose to analyse wild land incidents data provided by the National Fire Incident Reporting System 
+of the U.S Government's Federal Emergency Management Agency.
+available at: https://public.enigma.com/browse/collection/nfirs-wild-land-incidents/952d1599-65cc-4374-afa8-b07f6cdb2f98
+With this data we want to compare damages of land and date of occurance from this dataset to ou primary one and find any correlation
+between types of storm events to the amount of damage done. We plan on using the date of the events as a key to join the datasets.
+
+We are looking at the years 2010 amd 2011 to compare since 2012 and 2013 schemas drastically change. We could also look into the rise in storms
+and fires and their damage leading up the 2012 end of the world paranoia durring that time period.
+
+Here is a small sample from the Wild Land Incidents dataset:
+Row	state	fdid	inc_date	inc_no	exp_no	version	latitude	longitude	township	north_sou	range	east_west	section	subsection	meridian	area_type	fire_cause	hum_fact1	hum_fact2	hum_fact3	hum_fact4	hum_fact5	hum_fact6	hum_fact7	hum_fact8	fact_ign1	fact_ign2	supp_fact1	supp_fact2	supp_fact3	heat_sourc	mob_prop	eq_inv_ign	nfdrs_id	weath_type	wind_dir	wind_speed	air_temp	rel_humid	fuel_moist	dangr_rate	bldg_inv	bldg_thr	acres_burn	crop_burn1	crop_burn2	crop_burn3	undet_burn	tax_burn	notax_burn	local_burn	couty_burn	st_burn	fed_burn	forei_burn	milit_burn	other_burn	prop_manag	fed_code	nfdrs_fm	person_fir	gender	age	activity_w	horiz_dis	type_row	elevation	pos_slope	aspect	flame_lgth	spread_rat	serialid	latitude_longitude_appended
+0	AR	35011	4142011	0000040	0	5.0							0			1	U																											3																					0							1501	
+1	AR	35011	4142011	1000041	0	5.0							0			1	U																											5																					0							1502	
+2	AL	00110	3042011	1100585	0	5.0							0			2	U	N								UU																		0				100	0	0	0	0	0	0	0	0	0						0		0	965						250	
+3	AR	35011	4232011	0000042	0	5.0							0			1	4																											1																					0							1504	
+4	AL	00110	3122011	1100669	0	5.0							0			2	0	N								00																		0				100	0	0	0	0	0	0	0	0	0						0		0	963						251	
+5	AR	35011	5042011	0000045	0	5.0							0			1	U																											10																					0							1505	

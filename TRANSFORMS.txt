@@ -1,0 +1,14 @@
+Formatting issues in data:
+ 
+storm_events_modeled.Locations: data under cz_name has inconsistent capitalization in county names causing 
+				duplicate data where one county is fully capitalized and the other is lower 
+				case. In addition, final spaces in some records are causing inconsistencies. 
+          
+storm_events_modeled.StormEvent: cz_fips and state_fips could be joinned into one single element to give specify a location.
+
+
+WildLand_Incidents_modeled.Incidents: Create a primary key and turn date from INTEGER to DATE type. 
+
+WildLand_Incidents_modeled.State: Reformat State IDs to match the other dataset and add fips as well. 
+
+WildLand_Incidents_modeled.Date: Create a primary key as date and separate month, year and day. 

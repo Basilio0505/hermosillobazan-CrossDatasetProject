@@ -1,0 +1,22 @@
+Note the incident table currently doesn't have a valid primary key. we will be working on it using beam.
+
+After expanding our Date table from dataset2 by seperating month, day and year columns
+through beam (currently imposible through bigquery), we will be able to use it to join 
+to dataset1 and compare the rate or increase/decrease of storms and wild fires over 
+time leading up to 2012 (not inclusive) to see if it could back up the hysteria behind 
+the 2012 end of the world myth durring that period. We would use a join for joining Date
+and Incidents tables from dataset2 and use a join for Date and Storm Events from dataset1 
+then outer join those two to get our results. Using aggregate queries such as count or 
+add to see the increase in damage caused by the events group by month of the year.
+
+We can also use the same tables to find the change between the different years using the 
+same type of transforms used to find the results over months but now group the aggregate 
+query results by years instead of months.
+
+After expanding our State table from dataset2 by adding state names and/or state_fips
+through beam we will be able to use it to join to dataset1. As of instances while both 
+string they come in a different format, (e.g., California vs CA). Once this data discrepancy 
+has been taken care of, we will be able to see  rate and/or the amount of damage from events 
+per state. We would join State and StormEvents tables from dataset1 and outer join that to a 
+join of State and Incidents  table from dataset 2 and use aggregate queries such as count or 
+add to see the differences between states.
